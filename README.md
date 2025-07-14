@@ -47,7 +47,7 @@
 
 You can view the live application at:
 
-**[https://your-live-url.com](https://your-live-url.com)**
+**[https://shoppingkacart.netlify.app/](https://shoppingkacart.netlify.app/)**
 
 ## Project Structure & Testing
 
