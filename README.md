@@ -14,8 +14,8 @@
 1. **Clone the repository**
 
    ```bash
-   git clone <your-repo-url>
-   cd shopping-cart-web
+   git clone https://github.com/hiteshkothari/New-folder
+   cd New-folder
    ```
 
 2. **Install dependencies**
