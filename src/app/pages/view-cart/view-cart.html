@@ -1,0 +1,64 @@
+<button
+  [routerLink]="['']"
+  [routerLinkActive]="['active']"
+  [routerLinkActiveOptions]="{exact:true}"
+  class="back-button"
+>
+  Back to Shopping
+</button>
+
+<div class="view-cart-container">
+  <h2>
+    Cart
+    <a
+      class="view-cart"
+      [routerLink]="['/view-cart']"
+      [routerLinkActive]="['active']"
+      [routerLinkActiveOptions]="{exact:true}"
+      >👁️</a
+    >
+  </h2>
+
+  <div>
+    @if (cartItems().length === 0) {
+    <p>Your cart is empty.</p>
+    } @else{
+    <div class="cart-items">
+      @for(cartitem of cartItems();track cartitem.id; let i = $index) {
+      <div class="cart-item-details-header">
+        <div class="cart-product-info">
+          <p>{{i+1 + ")"}}</p>
+          <div>
+            <img
+              [src]="cartitem.image"
+              alt="{{cartitem.title}}"
+              class="cart-product-info-image"
+              width="30"
+              height="30"
+            />
+          </div>
+          <div class="description">{{cartitem.title}}</div>
+        </div>
+        <div class="cart-item-actions">
+          <div class="cart-item-details">
+            <span class="quantity">Quantity: {{cartitem.quantity}}</span>
+            <span class="price"> Price: {{cartitem.price | currency}}</span>
+            <button class="remove-button" (click)="removeFromCart(i)">X</button>
+          </div>
+        </div>
+      </div>
+      }
+    </div>
+
+    <br />
+    <div class="cart-summary">
+      <h2>Cart Summary</h2>
+      <div>
+        <p>You have {{cartItems().length}} items in your cart.</p>
+        <p>Total: {{totalPrice() | currency}}</p>
+        <!-- <button (click)="checkout()">Checkout</button> -->
+      </div>
+    </div>
+    }
+  </div>
+</div>

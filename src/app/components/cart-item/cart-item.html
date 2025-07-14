@@ -1,0 +1,11 @@
+<div class="product">
+  <div class="product-details">
+    <img src="{{ product().image }}" alt="" />
+    <h2>{{ product().title }}</h2>
+    <p class="description" data-cy="cart-item-description">{{ product().description }}</p>
+    <div class="product-actions">
+      <p>Price: {{ product().price }}</p>
+      <button data-cy="cart-item-remove-button" (click)="removeFromCart(product())">Delete</button>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,52 @@
+<div class="product-card-container">
+  <div class="product-card">
+    @if(product().offer){
+    <div class="ribbon">Sale</div>
+    }
+    <div class="rating">
+      ⭐{{product().rating.rate}} ({{product().rating.count}})
+    </div>
+    <img
+      [title]="product().title"
+      src="{{ product().image }}"
+      alt="Product
+    Image"
+      loading="lazy"
+    />
+    <div class="product-details">
+      <h2
+        class="product-title"
+        [title]="product().title"
+        (click)="viewProduct(product())"
+      >
+        {{isExpandedTitle ? product().title : (product().title | slice:0:10) +
+        "..." }}
+        <!-- @if(product().title.length > 30) {
+        <span class="view-more" (click)="toggleTitle()">
+          {{ isExpandedTitle ? 'View Less' : '... View More' }}
+        </span>
+        } -->
+        <!-- {{ product().title }} -->
+      </h2>
+      <!-- <p>{{ product().description | }}</p> -->
+      <p class="product-desc" [title]="product().description">
+        {{ isExpandedDescription ? product().description :
+        (product().description | slice:0:150) }} @if(
+        product().description.length > 150) {
+        <span class="view-more" (click)="toggleDescription()">
+          @if ( isExpandedDescription ) { View Less }@else {
+          <span (click)="viewProduct(product())">... View More</span>
+          }
+        </span>
+        }
+      </p>
+
+      <div class="product-actions">
+        <p class="price">${{ product().price }}</p>
+        <button class="button" (click)="addToCart(product())">
+          Add to Cart
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

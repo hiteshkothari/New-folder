@@ -1,0 +1,31 @@
+<div class="search-bar">
+  <input
+    type="text"
+    [(ngModel)]="searchQuery"
+    placeholder="Search products..."
+    (focus)="searchQuery.set('')"
+  />
+</div>
+<!-- {{allCategories() | json}} -->
+<div>
+  <h2>
+    Category: @for(category of allCategories(); track category) {
+    <button
+      class="category-button"
+      [class.active]="selectedCategory() === category"
+      (click)="selectedCategory.set(category)"
+    >
+      {{ category }}
+    </button>
+    }
+  </h2>
+</div>
+
+@if (loading()) { Loading Products... } @else {
+
+<div class="product-grid">
+  @for (product of filteredProductsByCategory; track product.id) {
+  <app-product-card [product]="product"></app-product-card>
+  }
+</div>
+}

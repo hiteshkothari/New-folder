@@ -1,0 +1,43 @@
+/* styles.scss */
+
+body {
+  font-family: sans-serif;
+  margin: 0;
+  background-color: #f5f5f5;
+  color: #222;
+  overflow-y: scroll;
+}
+
+.dark-theme {
+  background-color: #121212;
+  color: #e0e0e0;
+}
+
+.dark-theme .navbar {
+  background-color: #1f1f1f;
+  color: white;
+}
+
+.dark-theme .product-card {
+  border: 1px solid #eee !important;
+  background-color: #2a2a2a;
+  color: #fff;
+}
+
+.dark-theme .cart {
+  background-color: #2a2a2a;
+  color: #fff;
+}
+
+.price {
+  font-weight: bold;
+  color: #ff5722;
+}
+
+.quantity {
+  font-size: 0.9em;
+  font-weight: bold;
+  color: #57532b;
+}
+
+/* You can add global styles to this file, and also import other style files */

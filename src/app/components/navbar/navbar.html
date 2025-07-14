@@ -1,0 +1,25 @@
+<nav class="navbar">
+  <h1>Shopping Cart</h1>
+  <button (click)="toggleTheme()" class="toggle-button">🌓</button>
+
+  <div class="navbar-links">
+    <a
+      [routerLink]="['/']"
+      [routerLinkActive]="['active-link']"
+      (isActiveChange)="this.onRouterLinkActive($event)"
+      [routerLinkActiveOptions]="{exact:true}"
+      >🏚️ <span class="nav-link-text"> Home </span>
+    </a>
+    <a
+      [routerLink]="['/view-cart']"
+      [routerLinkActive]="['active-link']"
+      (isActiveChange)="this.onRouterLinkActive($event)"
+      >🛒@if(getItemsCount() > 0) {<span class="cart-item-count"
+        >{{getItemsCount()}}</span
+      >
+      }
+    </a>
+  </div>
+</nav>
+
+<nav></nav>
