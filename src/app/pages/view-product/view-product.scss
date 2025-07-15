@@ -1,5 +1,5 @@
 .view-product-container {
-  width: 600px;
+  max-width: 600px;
 
   margin: 0 auto;
 }
@@ -36,7 +36,7 @@
   flex: 1 1 400px;
   display: flex;
   flex-direction: column;
-   
+
 }
 
 .info-section h2 {
